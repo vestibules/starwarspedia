@@ -59,3 +59,4 @@ def planetInfo():
     Surface en eau : {planetChoice.surface_water} %.
     Population : {planetChoice.population} habitants.
     ''' )
+    #test
