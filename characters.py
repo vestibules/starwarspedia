@@ -44,7 +44,7 @@ def swchar():
             break
 
     characterChoice = character(listValues)
-    print(f'Chargement des informations de {characterChoice.name}')
+    print(f'Chargement des informations de {characterChoice.name}.')
     for i in range(5):
         print('.',end='',flush=True)
         time.sleep(0.5)

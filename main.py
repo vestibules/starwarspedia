@@ -21,6 +21,6 @@ def replay():
     elif choice == 'n':
         return False
 
-while encyclo == True:
+while encyclo:
     mainMenu()
     encyclo = replay()
