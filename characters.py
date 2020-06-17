@@ -51,14 +51,12 @@ def swchar():
     print()
     print(f'''
     Nom du personnage : {characterChoice.name}.
-    Taille du personnage : {characterChoice.height}.
-    Poids du personnage : {characterChoice.mass} cm.
+    Taille du personnage : {characterChoice.height} cm.
+    Poids du personnage : {characterChoice.mass} kg.
     Couleur de cheveux : {characterChoice.hair_color}.
     Couleur de peau : {characterChoice.skin_color}.
     Couleur des yeux : {characterChoice.eye_color}.
     Année de naissance : {characterChoice.birth_year}.
     Sexe du personnage : {characterChoice.gender}.
     ''')
-    
-        
  
