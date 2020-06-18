@@ -20,10 +20,16 @@ def episodeOpening():
 
     episodeSwitcher = {'4' : '1', '5' : '2', '6' : '3', '1' : '4', '2' : '5', '3' : '6'}
 
-    print()
-    print('Sélectionner un film :')
-    choice = input()
-    choiceEpisode = episodeSwitcher.get(choice)
+    choice = ''
+    while choice not in episodeSwitcher:
+        print()
+        print('Sélectionner un film :')
+        choice = input()
+
+        if choice in episodeSwitcher:
+            choiceEpisode = episodeSwitcher.get(choice)
+        else:
+            print('Sélection non reconnue.')
 
     r = requests.get(f'https://swapi.dev/api/films/{choiceEpisode}/')
     response = json.loads(r.content)

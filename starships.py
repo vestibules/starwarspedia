@@ -4,6 +4,8 @@ def swstarship():
     page = 1
     id = 1
     test = []
+    idList = []
+    choice = ''
 
     print("Vous consultez la base de donnée technique de l'Académie Jedi.")
 
@@ -16,10 +18,19 @@ def swstarship():
     for i in range(len(test)):
         name = test[i].get('name')
         print(f'{id} : {name}')
+        idList.append(id)
         id +=1
-
-    print('Choisir un vaisseau :')
-    choice = int(input())
+    
+    while choice not in idList:
+        print('Choisir un vaisseau :')
+        try:
+            choice = int(input())
+            if choice not in idList:
+                print('Sélection non reconnue.')
+        except ValueError:
+            print('Sélection non reconnue.')
+            continue
+        
     ship = test[choice - 1]
     listValues = []
     for k,v in ship.items():
