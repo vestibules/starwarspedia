@@ -43,6 +43,12 @@ def swstarship():
             self.MGLT = listValues[11]
             self.starship_class = listValues[12]
 
+        def getValeur(self):
+            if self.cost_in_credits == 'unknown':
+                return 'unknown.'
+            else:
+                return str(self.cost_in_credits) + ' crédits républicains.'
+
     choiceShip = starship(listValues)
 
     print(f'Chargement des informations de {choiceShip.name}.')
@@ -54,7 +60,7 @@ def swstarship():
     Nom du vaisseau : {choiceShip.name}
     Modèle : {choiceShip.model}
     Nom du constructeur : {choiceShip.manufacturer}
-    Valeur : {choiceShip.cost_in_credits} crédits républicains.
+    Valeur : {choiceShip.getValeur()}
     Longueur du vaisseau : {choiceShip.length} mètres.
     Vitesse max. en atmopshère : {choiceShip.max_atmosphering_speed} km/h.
     Taille de l'équipage : {choiceShip.crew}
