@@ -69,7 +69,7 @@ def swstarship():
     Nom du constructeur : {choiceShip.manufacturer}.
     Valeur : {choiceShip.cost_in_credits}.
     Longueur du vaisseau : {choiceShip.length} mètres.
-    Vitesse max. en atmopshère : {choiceShip.max_atmosphering_speed} km/h.
+    Vitesse max. en atmosphère : {choiceShip.max_atmosphering_speed} km/h.
     Taille de l'équipage : {choiceShip.crew}.
     Nombre max. de passagers : {choiceShip.passengers}.
     Capacité de fret : {choiceShip.getCargo()}
