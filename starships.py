@@ -53,7 +53,7 @@ def swstarship():
             if self.cargo_capacity == 'unknown':
                 return 'unknown.'
             else:
-                return str(self.cost_in_credits) + ' kg'
+                return str(self.cargo_capacity) + ' kg'
 
 
     choiceShip = starship(listValues)
