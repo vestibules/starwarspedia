@@ -32,7 +32,7 @@ def swstarship():
             self.name = listValues[0]
             self.model = listValues[1]
             self.manufacturer = listValues[2]
-            self.cost_in_credits = listValues[3]
+            self.cost_in_credits = self.getValeur(listValues[3])
             self.length = listValues[4]
             self.max_atmosphering_speed = listValues[5]
             self.crew = listValues[6]
@@ -43,17 +43,17 @@ def swstarship():
             self.MGLT = listValues[11]
             self.starship_class = listValues[12]
 
-        def getValeur(self):
-            if self.cost_in_credits == 'unknown':
-                return 'inconnu.'
+        def getValeur(self,list):
+            if list == 'unknown':
+                return 'unknown'
             else:
-                return str(self.cost_in_credits) + ' crédits républicains.'
+                return str(list) + ' crédits républicains'
         
         def getCargo(self):
             if self.cargo_capacity == 'unknown':
-                return 'inconnu.'
+                return 'unknown.'
             else:
-                return str(self.cost_in_credits) + ' kg.'
+                return str(self.cost_in_credits) + ' kg'
 
 
     choiceShip = starship(listValues)
@@ -64,19 +64,19 @@ def swstarship():
         time.sleep(0.5)
     print()
     print(f'''
-    Nom du vaisseau : {choiceShip.name}
-    Modèle : {choiceShip.model}
-    Nom du constructeur : {choiceShip.manufacturer}
-    Valeur : {choiceShip.getValeur()}
+    Nom du vaisseau : {choiceShip.name}.
+    Modèle : {choiceShip.model}.
+    Nom du constructeur : {choiceShip.manufacturer}.
+    Valeur : {choiceShip.cost_in_credits}.
     Longueur du vaisseau : {choiceShip.length} mètres.
     Vitesse max. en atmopshère : {choiceShip.max_atmosphering_speed} km/h.
-    Taille de l'équipage : {choiceShip.crew}
-    Nombre max. de passagers : {choiceShip.passengers}
+    Taille de l'équipage : {choiceShip.crew}.
+    Nombre max. de passagers : {choiceShip.passengers}.
     Capacité de fret : {choiceShip.getCargo()}
-    Autonomie max. : {choiceShip.consumables}
-    Echelle hyperdrive : {choiceShip.hyperdrive_rating}
-    Mégalumière /heure : {choiceShip.MGLT}
-    Classe du vaisseau : {choiceShip.starship_class}
+    Autonomie max. : {choiceShip.consumables}.
+    Echelle hyperdrive : {choiceShip.hyperdrive_rating}.
+    Mégalumière /heure : {choiceShip.MGLT}.
+    Classe du vaisseau : {choiceShip.starship_class}.
     ''')
 
 
