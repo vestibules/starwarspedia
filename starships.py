@@ -45,9 +45,16 @@ def swstarship():
 
         def getValeur(self):
             if self.cost_in_credits == 'unknown':
-                return 'unknown.'
+                return 'inconnu.'
             else:
                 return str(self.cost_in_credits) + ' crédits républicains.'
+        
+        def getCargo(self):
+            if self.cargo_capacity == 'unknown':
+                return 'inconnu.'
+            else:
+                return str(self.cost_in_credits) + ' kg.'
+
 
     choiceShip = starship(listValues)
 
@@ -65,7 +72,7 @@ def swstarship():
     Vitesse max. en atmopshère : {choiceShip.max_atmosphering_speed} km/h.
     Taille de l'équipage : {choiceShip.crew}
     Nombre max. de passagers : {choiceShip.passengers}
-    Capacité de fret : {choiceShip.cargo_capacity} kg.
+    Capacité de fret : {choiceShip.getCargo()}
     Autonomie max. : {choiceShip.consumables}
     Echelle hyperdrive : {choiceShip.hyperdrive_rating}
     Mégalumière /heure : {choiceShip.MGLT}
