@@ -1,10 +1,10 @@
-import characters, planets,starships
+import characters, planets, starships, opening
 
 encyclo = True
 
 def mainMenu():
     choice = ''
-    menu = {'1' : 'Planètes', '2' : 'Personnages', '3' : 'Vaisseaux'}
+    menu = {'1' : 'Planètes', '2' : 'Personnages', '3' : 'Vaisseaux', '4' : 'Opening de film'}
     print('Voici la liste des éléments consultables dans cette encyclopédie :')
     for k,v in menu.items():
         print(f'{k} : {v}')
@@ -17,6 +17,8 @@ def mainMenu():
             characters.swchar()
         elif choice == '3':
             starships.swstarship()
+        elif choice == '4':
+            opening.episodeOpening()
         else:
             print('Sélection inconnue.')
 
