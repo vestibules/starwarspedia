@@ -7,6 +7,8 @@ def planetInfo():
 
     page = 1
     id = 1
+    idList = []
+    choice = ''
 
     while page < 6:
         r = requests.get(f'https://swapi.dev/api/planets/?page={page}')
@@ -17,10 +19,18 @@ def planetInfo():
         for i in range(len(results)):
             name = (results[i].get('name'))
             print(f'{id} : {name}')
+            idList.append(id)
             id+=1
 
-    print('Quelle planète voulez vous consulter ?')    
-    choice = input()
+    while choice not in idList:
+        print('Quelle planète voulez vous consulter ?')
+        try:    
+            choice = int(input())
+            if choice not in idList:
+                print('Saisie non reconnue.')
+        except ValueError:
+            print('Saisie non reconnue.')
+
     r = requests.get(f'https://swapi.dev/api/planets/{choice}')
     response = json.loads(r.content)
 
